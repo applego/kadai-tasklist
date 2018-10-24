@@ -1,0 +1,16 @@
+<h5>作成ページ</h5>
+
+<table class="mytable-new" border="1" width="500" cellspacing="0" cellpadding="5" bordercolor="#e6e6e6">
+  <tr bgcolor="#ffe6ea">
+    <th width="40">No.</th><th>Content</th>
+  </tr>
+  <tr bgcolor="#ffffcc">
+    <th width="40"><%= (Task.count+1).to_s %></th>
+    <td>
+        <%= form_for(@task) do |f| %>
+            <%= f.text_field :content ,:size => "50%",:placeholder => "Enter ..." %>
+            <%= f.submit 'ADD',:class => "btn btn-info" %>
+        <% end %>
+    </td>
+  </tr>
+</table>

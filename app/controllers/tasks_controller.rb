@@ -1,0 +1,60 @@
+class TasksController < ApplicationController
+  def index
+    @tasks = Task.all
+  end
+  
+  def create
+    new_task = Task.new(task_params)
+    
+    if new_task.save
+      flash[:success] = "正常に追加されました"
+      redirect_to tasks_url
+    elsif
+      flash.now[:danger] = new_task.content + "が追加されませんでした。"
+      render :new
+    end
+  end
+  
+  def new
+    @task = Task.new
+  end
+  
+  def edit
+    @task = Task.find(params[:id])
+  end
+  
+  def show
+    @task = Task.find(params[:id])
+  end
+  
+  def update
+    @task = Task.find(params[:id])
+    # render plain:@task.content.to_s
+    # render plain:params[:task][:content]
+    # render plain:task_params[:content]
+    
+    if @task.update(content:task_params[:content])
+      flash[:success] = '正常に更新しました'
+      redirect_to tasks_url
+    elsif
+      flash[:danger] = "更新に失敗しました"
+      render :edit
+    end
+      
+  end
+  
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    
+    flash[:success] = '正常に削除されました'
+    redirect_to tasks_url
+  end
+  
+  private
+  
+  #Strong Parameter
+  def task_params
+    params.require(:task).permit(:content)
+  end
+end

@@ -1,0 +1,52 @@
+<h4>タスク一覧</h4>
+
+<table class="mytable" border="1" width="500" cellspacing="0" cellpadding="5" bordercolor="#e6e6e6">
+  <tr bgcolor="#ffe6ea">
+    <th width="40">No.</th><th>Content</th>
+  </tr>
+  <tbody>
+  <% i = 0 %>
+  <% color_odd = "#e6f7ff" %>
+  <% color_even = "#eeffcc" %>
+  <% color = "" %>
+  <% @tasks.each do |task| %>
+  <% i += 1 %>
+  <% if i%2 == 0 %>
+  <%   color = color_even %>
+  <% elsif %>
+  <%   color = color_odd %>
+  <% end %>
+  <tr bgcolor=<%= color %>>
+    <th width="40"><%= i %></th>
+    <td>
+      <span class="content">
+        <%= task.content %>
+      </span>
+    <!--</td>-->
+    <!--<td>-->
+      <!--<%= link_to '<sapn class="glyphicon glyphicon-new-window"></sapn>',task %> -->
+      <a href="tasks/<%= task.id.to_s %>">
+        <sapn class="glyphicon glyphicon-new-window"></sapn>
+      </a>
+    <!--</td>-->
+    <!--<td>-->
+      <a href="tasks/<%= task.id.to_s %>/edit">
+        <span class="glyphicon glyphicon-edit"></span>
+      </a>
+    <!--</td>-->
+    <!--<td>-->
+      <%= link_to("/tasks/#{task.id}",{method:"delete"},data:{confirm:'DeleteしてOK?'}) do %>
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      <% end %>
+      <!--<%= link_to 'Delete',@task,method: :delete,data:{confirm:'DeleteしてOK？'} %>-->
+      <!--<a>-->
+      <!--  <span class="glyphicon glyphicon-trash"></span>-->
+      <!--</a>-->
+    <!--</td>-->
+  </tr>
+  <% end %>
+  <tr bgcolor="#ffffcc">
+    <th width="40"><a href=<%= new_task_path %>><span class="glyphicon glyphicon-plus"></a></span></td>
+  </tr>
+  </tbody>
+</table>
