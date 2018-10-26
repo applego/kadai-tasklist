@@ -8,7 +8,7 @@
     <th width="40">#</th>
     <td>
         <%= form_for(@task) do |f| %>
-            <%= f.text_field :content ,:size => "45%",:placeholder => @task.content %>
+            <%= f.text_field :content ,:size => "45%",:placeholder => @task.content,:class => "task-content" %>
             <%= f.submit 'UPDATE',:class => "btn btn-info" %>
         <% end %>
     </td>

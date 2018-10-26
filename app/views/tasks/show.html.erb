@@ -7,12 +7,12 @@
   <tr bgcolor="#ffffcc">
     <th width="40">#</th>
     <td>
-      <label class="content"><%= @task.content %></label>
+      <label class="label-content"><%= @task.content %></label>
       <!--<a href="/tasks/<%= @task.id.to_s %>/edit">-->
       <a href=<%= edit_task_path %>>
         <span class="glyphicon glyphicon-edit"></span>
       </a>
-      <%= link_to("/tasks/#{@task.id}",{method:"delete"},data:{confirm:'DeleteしてOK?'}) do %>
+      <%= link_to("/tasks/#{@task.id}",{method:"delete"},data:{confirm:'Are you sure to want to delete?'}) do %>
       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
       <% end %>
     </td>

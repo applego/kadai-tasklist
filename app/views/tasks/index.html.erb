@@ -1,8 +1,11 @@
 <h4>タスク一覧</h4>
 
-<table class="mytable" border="1" width="500" cellspacing="0" cellpadding="5" bordercolor="#e6e6e6">
+<table class="mytable" border="1" cellspacing="0" cellpadding="5" bordercolor="#e6e6e6">
   <tr bgcolor="#ffe6ea">
-    <th width="40">No.</th><th>Content</th>
+    <th class="no" width="40">No.</th>
+    <th class="content">Content</th>
+    <th class="time">Created</th>
+    <th class="time">Updated</th>
   </tr>
   <tbody>
   <% i = 0 %>
@@ -17,32 +20,32 @@
   <%   color = color_odd %>
   <% end %>
   <tr bgcolor=<%= color %>>
-    <th width="40"><%= i %></th>
-    <td>
-      <span class="content">
+    <th class="no"><%= i %></th>
+    <td class="content">
+      <span class="task-content">
         <%= task.content %>
       </span>
-    <!--</td>-->
-    <!--<td>-->
-      <!--<%= link_to '<sapn class="glyphicon glyphicon-new-window"></sapn>',task %> -->
-      <a href="tasks/<%= task.id.to_s %>">
-        <sapn class="glyphicon glyphicon-new-window"></sapn>
-      </a>
-    <!--</td>-->
-    <!--<td>-->
-      <a href="tasks/<%= task.id.to_s %>/edit">
-        <span class="glyphicon glyphicon-edit"></span>
-      </a>
-    <!--</td>-->
-    <!--<td>-->
-      <%= link_to("/tasks/#{task.id}",{method:"delete"},data:{confirm:'DeleteしてOK?'}) do %>
-      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-      <% end %>
-      <!--<%= link_to 'Delete',@task,method: :delete,data:{confirm:'DeleteしてOK？'} %>-->
-      <!--<a>-->
-      <!--  <span class="glyphicon glyphicon-trash"></span>-->
-      <!--</a>-->
-    <!--</td>-->
+      <div class="buttons">
+        <a href="tasks/<%= task.id.to_s %>">
+          <sapn class="glyphicon glyphicon-new-window"></sapn>
+        </a>
+        <a href="tasks/<%= task.id.to_s %>/edit">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a>
+        <%= link_to("/tasks/#{task.id}",{method:"delete"},data:{confirm:'Are you sure to want to delete?'}) do %>
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        <% end %>
+      </div>
+    <td class="time">
+      <span>
+        <%= task.created_at.getlocal("+09:00").strftime("%Y-%m-%d %H:%M:%S") %>
+      </span>
+    </td>
+    <td class="time">
+      <span>
+        <%= task.updated_at.getlocal("+09:00").strftime("%Y-%m-%d %H:%M:%S") %>
+      </span>
+    </td>
   </tr>
   <% end %>
   <tr bgcolor="#ffffcc">

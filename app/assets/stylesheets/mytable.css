@@ -8,6 +8,7 @@ table tbody th{
 table tbody td{
   text-align:left;
   padding:2px;
+  word-wrap:break-word;
 }
 table.mytable:hover tbody tr:hover td {
     color: #666;
@@ -22,13 +23,38 @@ table.mytable:hover tbody:hover td:hover {
     background: #69f;
 }
 
+
+table{
+  width:100%;
+}
+
 table a{
-    margin:3px;
-    padding:3px;
+  margin:3px;
+  padding:3px;
+}
+
+
+table .no{
+  width:40px;
 }
 
 table .content{
+  /*width:100%;*/
+  max-width:500px;
+}
+
+table .time{
+  width:160px;
+}
+
+table tbody .task-content{
   display: inline-block;
-  width:80%;
+  width:100%;
   padding:2px;
+}
+
+table tbody td .buttons{
+  display:block;
+  text-align:left;
+  width:30%;
 }
