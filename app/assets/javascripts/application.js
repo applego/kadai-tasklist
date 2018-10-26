@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/widgets/sortable
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets	
-// = require data-confirm-modal
+//= require data-confirm-modal

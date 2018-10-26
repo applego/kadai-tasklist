@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    # @tasks = Task.all
+    @tasks = Task.rank(:row_order)
   end
   
   def create
@@ -51,10 +52,18 @@ class TasksController < ApplicationController
     redirect_to tasks_url
   end
   
+  # this action will be called via ajax
+  def sort
+   fruit = Task.find(params[:fruit_id])
+   fruit.update(task_params)
+   render nothing: true
+  end
+  
   private
   
   #Strong Parameter
   def task_params
-    params.require(:task).permit(:content)
+    # params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :row_order_position)
   end
 end

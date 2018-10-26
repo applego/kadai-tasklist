@@ -48,7 +48,7 @@
 /*}*/
 
 table .task-content{
-  display: inline-block;
+  display: block;
   width:100%;
   padding:2px;
 }
@@ -57,4 +57,22 @@ table .task-content{
 /*  display:block;*/
 /*  text-align:left;*/
 /*  width:30%;*/
+/*}*/
+
+.panel-body {
+background:#FFCCFF;
+}
+
+h4 {
+font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+}
+
+/*.inc-glyphi{*/
+/*  text-align:left;*/
+/*}*/
+
+/*.p-gly{*/
+/*  background-color: #fff7e6;*/
+/*  max-width: 50%;*/
+/*  margin:0 auto;*/
 /*}*/
