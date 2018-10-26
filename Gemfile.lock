@@ -56,6 +56,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    data-confirm-modal (1.6.2)
+      railties (>= 3.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -167,6 +169,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
+  data-confirm-modal
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

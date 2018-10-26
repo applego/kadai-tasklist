@@ -2,59 +2,59 @@
 /*    color: #ccc;*/
 /*    background: #ccc;*/
 /*}*/
-table tbody th{
-  text-align:center;
-}
-table tbody td{
-  text-align:left;
-  padding:2px;
-  word-wrap:break-word;
-}
-table.mytable:hover tbody tr:hover td {
-    color: #666;
-    background: #cef;
-}
-table.mytable:hover tbody tr:hover th {
-    background: #eee;
-}
-table.mytable:hover tbody:hover td:hover {
-    opacity: 1;
-    color: #fff;
-    background: #69f;
-}
+/*table tbody th{*/
+/*  text-align:center;*/
+/*}*/
+/*table tbody td{*/
+/*  text-align:left;*/
+/*  padding:2px;*/
+/*  word-wrap:break-word;*/
+/*}*/
+/*table.mytable:hover tbody tr:hover td {*/
+/*    color: #666;*/
+/*    background: #cef;*/
+/*}*/
+/*table.mytable:hover tbody tr:hover th {*/
+/*    background: #eee;*/
+/*}*/
+/*table.mytable:hover tbody:hover td:hover {*/
+/*    opacity: 1;*/
+/*    color: #fff;*/
+/*    background: #69f;*/
+/*}*/
 
 
-table{
-  width:100%;
-}
+/*table{*/
+/*  width:100%;*/
+/*}*/
 
-table a{
-  margin:3px;
-  padding:3px;
-}
+/*table a{*/
+/*  margin:3px;*/
+/*  padding:3px;*/
+/*}*/
 
 
-table .no{
-  width:40px;
-}
+/*table .no{*/
+/*  width:40px;*/
+/*}*/
 
-table .content{
+/*table .content{*/
   /*width:100%;*/
-  max-width:500px;
-}
+/*  max-width:500px;*/
+/*}*/
 
-table .time{
-  width:160px;
-}
+/*table .time{*/
+/*  width:160px;*/
+/*}*/
 
-table tbody .task-content{
+table .task-content{
   display: inline-block;
   width:100%;
   padding:2px;
 }
 
-table tbody td .buttons{
-  display:block;
-  text-align:left;
-  width:30%;
-}
+/*table tbody td .buttons{*/
+/*  display:block;*/
+/*  text-align:left;*/
+/*  width:30%;*/
+/*}*/
