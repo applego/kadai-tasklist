@@ -54,8 +54,8 @@ class TasksController < ApplicationController
   
   # this action will be called via ajax
   def sort
-   fruit = Task.find(params[:fruit_id])
-   fruit.update(task_params)
+   task = Task.find(params[:id])
+ task.update(task_params)
    render nothing: true
   end
   

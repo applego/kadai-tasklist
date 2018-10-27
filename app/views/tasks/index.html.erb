@@ -20,7 +20,8 @@
     <% elsif %>
     <%   color = color_odd %>
     <% end %>
-    <tr bgcolor=<%= color %>,data : { model_name: task.class.name.underscore, update_url: task_sort_path(task)}>
+      <!--data : { model_name: task.class.name.underscore, update_url: task_sort_path(task)}id="task_#{task.id}"-->
+    <tr bgcolor=<%= color %> class="item" data-model-name="<%= task.class.name.underscore %>" data-update-url="<%= task_sort_path(task) %>" >
       <th class="no"><%= i %></th>
       <td class="content">
         <span class="task-content">
