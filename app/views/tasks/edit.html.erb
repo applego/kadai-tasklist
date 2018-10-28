@@ -9,16 +9,16 @@
       <th width="40">#</th>
       <td>
           <%= form_for(@task) do |f| %>
-            <% if task.errors.any? %>
+            <% if @task.errors.any? %>
               <div id="error_explanation">
                 <ul>
-                  <% task.errors.full_messages.each do |task| %>
+                  <% @task.errors.full_messages.each do |task| %>
                     <li><%= task %></li>
                   <% end %>
                 </ul>
               </div>
             <% end %>
-            
+            <%= f.select :status, [["To Do", "To Do"], ["To do-2", "To do-2"], ["To do-3", "To do-3"], ["Doing", "Doing"], ["Done", "Done"], ["Other", "Other"]] ,:selected => @task.status,class:"form-control" %>
             <%= f.text_field :content ,:size => "45%",:placeholder => @task.content,:class => "task-content" %>
             <%= f.submit 'UPDATE',:class => "btn btn-warning" %>
           <% end %>

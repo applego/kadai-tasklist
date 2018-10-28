@@ -36,7 +36,7 @@ class TasksController < ApplicationController
     # render plain:params[:task][:content]
     # render plain:task_params[:content]
     
-    if @task.update(content:task_params[:content])
+    if @task.update(status:task_params[:status],content:task_params[:content])
       flash[:success] = '正常に更新しました'
       redirect_to tasks_url
     elsif
@@ -56,9 +56,9 @@ class TasksController < ApplicationController
   
   # this action will be called via ajax
   def sort
-   task = Task.find(params[:id])
- task.update(task_params)
-   render nothing: true
+    task = Task.find(params[:id])
+    task.update(task_params)
+    render nothing: true
   end
   
   private
@@ -70,6 +70,6 @@ class TasksController < ApplicationController
   #Strong Parameter
   def task_params
     # params.require(:task).permit(:content)
-    params.require(:task).permit(:content, :row_order_position)
+    params.require(:task).permit(:content, :row_order_position, :status)
   end
 end

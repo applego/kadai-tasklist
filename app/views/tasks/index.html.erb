@@ -4,6 +4,7 @@
   <table class="table table-striped table-hover table-sortable" >
     <tr bgcolor="#ffe6ea">
       <th class="no" width="40">No.</th>
+      <th class="content">Status</th>
       <th class="content">Content</th>
       <th class="time">Created</th>
       <th class="time">Updated</th>
@@ -23,6 +24,9 @@
       <!--data : { model_name: task.class.name.underscore, update_url: task_sort_path(task)}id="task_#{task.id}"-->
     <tr bgcolor=<%= color %> class="item" data-model-name="<%= task.class.name.underscore %>" data-update-url="<%= task_sort_path(task) %>" >
       <th class="no"><%= i %></th>
+      <td>
+        <%= task.status %>
+      </td>
       <td class="content">
         <span class="task-content">
           <%= task.content %>
