@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'data-confirm-modal'
 # 並び替え
 gem 'ranked-model'
+
 # ドラッグアンドドロップ
 gem 'jquery-ui-rails'
 # Use SCSS for stylesheets

@@ -56,7 +56,7 @@ class TasksController < ApplicationController
   
   # this action will be called via ajax
   def sort
-    task = Task.find(params[:id])
+    task = Task.find(params[:task_id])
     task.update(task_params)
     render nothing: true
   end
