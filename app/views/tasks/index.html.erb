@@ -1,4 +1,6 @@
-<h4>Your Task List</h4>
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <h4>Your Task List</h4><span class="badge"><%= @count_tasks %></span>
 <!--border="1" cellspacing="0" cellpadding="5" bordercolor="#e6e6e6"-->
 <div class="panel panel-default">
   <table class="table table-striped table-hover table-sortable" >
@@ -60,3 +62,11 @@
 <div>
   <panel width="40"><a href=<%= new_task_path %>><span class="glyphicon glyphicon-plus"></a></span></panel>
 </div>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to the Tasklist</h1>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>
