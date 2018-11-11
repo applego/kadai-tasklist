@@ -7,8 +7,9 @@ class TasksController < ApplicationController
       # @tasks = Task.all
       #@tasks = Task.rank(:row_order)
       #@tasks = current_user.tasks.order('created_at DESC')
+      
       @tasks = current_user.tasks.rank(:row_order)
-      counts(@user)
+      counts(current_user)
     end
   end
   
