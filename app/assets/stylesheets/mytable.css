@@ -76,3 +76,7 @@ font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ãƒ’ã
 /*  max-width: 50%;*/
 /*  margin:0 auto;*/
 /*}*/
+
+.glyphicon{
+  width:20px;
+}

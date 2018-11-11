@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
-  <h4>Your Task List</h4><span class="badge"><%= @count_tasks %></span>
+  <h4>Your Task List <span class="badge"><%= @count_tasks %></span></h4>
 <!--border="1" cellspacing="0" cellpadding="5" bordercolor="#e6e6e6"-->
 <div class="panel panel-default">
   <table class="table table-striped table-hover table-sortable" >
